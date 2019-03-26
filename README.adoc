@@ -3,7 +3,8 @@ LiDAR SLAM Group <huiwu.luo@aliyun.com>
 v0.1, 2019-03-26
 :toc:
 
-*A page of SLAM Resources to follow up current SLAM trends and papers.*
+NOTE: *A page of SLAM Resources to follow up current SLAM trends and papers.*
+
 '''
 
 == Paper List
