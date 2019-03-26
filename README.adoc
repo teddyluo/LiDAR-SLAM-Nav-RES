@@ -4,6 +4,7 @@ v0.1, 2019-03-26
 :toc:
 :icons: font
 
+[.lead]
 A page of `LiDAR SLAM` Resources to follow up current SLAM trends and papers.
 
 '''
