@@ -2,21 +2,39 @@
 LiDAR SLAM Group <huiwu.luo@aliyun.com>
 v0.1, 2019-03-26
 :toc:
+:icons: font
 
-NOTE: *A page of SLAM Resources to follow up current SLAM trends and papers.*
+[.lead]
+A page of #LiDAR SLAM# Resources to follow up current SLAM trends and papers.
 
 '''
 
-== Paper List
-* Google Cartographer: +
+== Papers
+. Google Cartographer +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
-** https://ai.google/research/pubs/pub45466.pdf[**Paper**]
-** https://github.com/googlecartographer/cartographer[**Code**]
-** https://google-cartographer.readthedocs.io/en/latest/index.html[**Online document**]
+** https://ai.google/research/pubs/pub45466.pdf[**paper**]
+** https://github.com/googlecartographer/cartographer[**code**]
+** https://google-cartographer.readthedocs.io/en/latest/index.html[**online document**]
+
+. Sparse Pose Adjustment +
+Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
+
+** http://ais.informatik.uni-freiburg.de/publications/papers/konolige10iros.pdf[**paper**]
+
+. Scan Matching +
+Olson E B. Real-time correlative scan matching[C]//_2009 IEEE International Conference on Robotics and Automation_. IEEE, 2009: 4387-4393.
+
+** https://april.eecs.umich.edu/media/pdfs/olson2009icra.pdf[**paper**]
+
+. Branch and Bound Algorithm +
+Clausen J. Branch and bound algorithms-principles and examples[J]. _Department of Computer Science, University of Copenhagen_, 1999: 1-30.
+
+** http://janders.eecg.toronto.edu/1387/readings/b_and_b.pdf[paper]
 
 
-
+== Notes
+(to be continued)
 
 == Reference
 Repository was inspired by:
