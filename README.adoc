@@ -14,6 +14,7 @@ A page of `LiDAR SLAM` Resources to follow up current SLAM trends and papers.
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
 ** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://github.com/googlecartographer/cartographer[**code**], https://google-cartographer.readthedocs.io/en/latest/index.html[**online document**]
+link:notes/CartographerPaperInZhCn.md[中文翻译]
 
 . Sparse Pose Adjustment +
 Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
