@@ -6,7 +6,7 @@
 
 [toc]
 
-** 摘要 **
+**摘要**
 Portable laser range-finders, further referred to as LIDAR, and simultaneous localization and mapping (SLAM) are an efficient method of acquiring as-built floor plans. Generating and visualizing floor plans in real-time helps the operator assess the quality and coverage of capture data. Building a portable capture platform necessitates operating under limited computational resources. We present the approach used in our backpack mapping platform which achieves real-time mapping and loop closure at a 5 cm resolution. To achieve realtime loop closure, we use a branch-and-bound approach for computing scan-to-submap matches as constraints. We provide experimental results and comparisons to other well known approaches which show that, in terms of quality, our approach is competitive with established techniques.
 便携式激光测距仪(简称为LIDAR)搭配同步定位与建图（SLAM）是建立平面地图的较有效的一种方法。实时生成和绘制平面图能很好地辅助操作者评估捕获数据的质量和覆盖范围。因此，在有限的计算资源条件下建立便携式的数据捕获平台很有必要。我们提供了一种用于背包(backpack)平台下的建图方法，能够实时绘制5cm精度的地图及闭合回环。为了让回环检测实现实时计算，我们使用了分支上界法(branch-and-bound)，将scan-to-map的匹配作为其约束条件。我们提供了实验结果，与其他非常著名的方法相比，我们的方法在地图构建质量上可以与他们相匹敌。
 
@@ -67,8 +67,6 @@ and equivalently for misses.
 当有扫描要插入概率网格时，分别计算一组`击中`的网格点集和`不击中`的不相交集。 对于每个击中，我们将最近的网格点插入到击中集中。 对于每个不击中，我们插入与每个像素相关联的网格点，该网格点与扫描原点和每个扫描点之间的一条射线相交，不包括已经在击中集中出现的网格点。 如果每个以前未观察到的网格点位于其中一个集合时，则会为其分配概率$p_{hit}$或$p_{miss} $。 如果已经观察到网格点$x$，则更新其击中和不击中的概率
 ![p-cart-eq2-3.png](./figs/p-cart-eq2-3.png)
 对于不击中的网格点进行同等操作。
-
-![p-cart-fig2.png](./figs/p-cart-fig2.png)
 
 **C. Ceres scan matching**
 Prior to inserting a scan into a submap, the scan pose $\xi$ is optimized relative to the current local submap using a Ceres-based [14] scan matcher. The scan matcher is responsible for finding a scan pose that maximizes the probabilities at the scan points in the submap. We cast this as a nonlinear least squares problem
@@ -198,7 +196,7 @@ Using data collected at the Deutsches Museum spanning 1913s of sensor data or 22
 The generated graph for the loop closure optimization consists of 11456 nodes and 35300 edges. The optimization problem (SPA) is run every time a few nodes have been added to the graph. A typical solution takes about 3 iterations, and finishes in about 0.3s.
 生成用于优化闭环检测的图由11456个节点和35300条边组成。 每当向图中加入几个节点时都会启动优化问题（SPA）。 该问题的解通常需要大约3次迭代，并在约0.3秒内完成。
 
-** B. Real-World Experiment: Neato’s Revo LDS **
+**B. Real-World Experiment: Neato’s Revo LDS**
 Neato Robotics uses a laser distance sensor (LDS) called Revo LDS [20] in their vacuum cleaners which costs under $30. We captured data by pushing around the vacuum cleaner on a trolley while taking scans at approximately 2Hz over its debug connection. Figure 5 shows the resulting 5cm resolution floor plan. To evaluate the quality of the floor plan, we compare laser tape measurements for 5 straight lines to the pixel distance in the resulting map as computed by a drawing tool. The results are presented in `Table I`, all values are in meters. The values are roughly in the expected order of magnitude of one pixel at each end of the line.
 Neato Robotics公司在他们的真空吸尘器中使用一款称为Revo LDS [20]的激光测距传感器（LDS），售价低于30美元。我们推动手推车上的真空吸尘器以捕获数据，同时开启其调试连接以大约2Hz的速度采取扫描数据。 图5显示了5厘米分辨率的平面图。 为了评估构建平面地图的质量，我们将5条直线的激光带测量结果与绘图工具计算得到的地图中的像素距离进行比较。 结果如`表I`所示，所有值均以米为单位。 这些结果跟预期偏差一个像素的量级达成一致。
 
@@ -245,7 +243,7 @@ This research has been validated through experiments in the Deutsches Museum, Mu
 Comparisons were done using manually verified relations and results from [21] which uses data from the Robotics Data Set Repository (Radish) [19]. Thanks go to Patrick Beeson, Dieter Fox, Dirk Hahnel, Mike Bosse, John Leonard, Cyrill Stachniss for providing this data. The data for the Freiburg University Hospital was provided by Bastian Steder, Rainer Kummerle, Christian Dornhege, Michael Ruhnke, Cyrill Stachniss, Giorgio Grisetti, and Alexander Kleiner.
 通过人工验证数据帧的关系和[21]的结果进行了实验比较，[21]采用机器人数据集库Robotics Data Set Repository (Radish)（Radish）[19]的。 感谢Patrick Beeson，Dieter Fox，Dirk Hahnel，Mike Bosse，John Leonard和Cyrill Stachniss提供的实验数据。 弗莱堡大学医院的数据由Bastian Steder，Rainer Kummerle，Christian Dornhege，Michael Ruhnke，Cyrill Stachniss，Giorgio Grisetti和Alexander Kleiner提供。
 
-## REFERECNE
+## REFERENCE
 [1] E. Olson, “M3RSM: Many-to-many multi-resolution scan matching,”in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), June 2015.
 [2] K. Konolige, G. Grisetti, R. K¨ummerle, W. Burgard, B. Limketkai, and R. Vincent, “Sparse pose adjustment for 2D mapping,” in IROS, Taipei, Taiwan, 10/2010 2010.
 [3] F. Lu and E. Milios, “Globally consistent range scan alignment for environment mapping,” Autonomous robots, vol. 4, no. 4, pp. 333–349, 1997.
