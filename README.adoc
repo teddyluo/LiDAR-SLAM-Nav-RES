@@ -5,28 +5,31 @@ v0.1, 2019-03-26
 :icons: font
 
 [.lead]
-A page of `LiDAR SLAM` Resources to follow up current SLAM trends and papers.
+A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM trends and papers.
 
 '''
 
 == Papers
-. Google Cartographer +
+. [big red yellow-background]*_Google Cartographer_* +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
-** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://github.com/googlecartographer/cartographer[**code**], https://google-cartographer.readthedocs.io/en/latest/index.html[**online document**]
+** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://github.com/googlecartographer/cartographer[**code**],
+https://github.com/googlecartographer/cartographer_ros[**code(ROS)**], https://google-cartographer.readthedocs.io/en/latest/index.html[**document(online)**],
+https://media.readthedocs.org/pdf/google-cartographer-ros/latest/google-cartographer-ros.pdf[**document(pdf)**]
+
 ** https://blog.csdn.net/luohuiwu/article/details/88890307[Chinese translation]
 
-. Sparse Pose Adjustment +
+. [red]#*_Sparse Pose Adjustment_*# +
 Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
 
 ** http://ais.informatik.uni-freiburg.de/publications/papers/konolige10iros.pdf[**paper**]
 
-. Scan Matching +
+. *_Scan Matching_* +
 Olson E B. Real-time correlative scan matching[C]//_2009 IEEE International Conference on Robotics and Automation_. IEEE, 2009: 4387-4393.
 
 ** https://april.eecs.umich.edu/media/pdfs/olson2009icra.pdf[**paper**]
 
-. Branch and Bound Algorithm +
+. *_Branch and Bound Algorithm_* +
 Clausen J. Branch and bound algorithms-principles and examples[J]. _Department of Computer Science, University of Copenhagen_, 1999: 1-30.
 
 ** http://janders.eecg.toronto.edu/1387/readings/b_and_b.pdf[paper]
