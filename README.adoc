@@ -13,11 +13,20 @@ A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM tren
 . [big red yellow-background]*_Google Cartographer_* +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
-** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://github.com/googlecartographer/cartographer[**code**],
-https://github.com/googlecartographer/cartographer_ros[**code(ROS)**], https://google-cartographer.readthedocs.io/en/latest/index.html[**document(online)**],
-https://media.readthedocs.org/pdf/google-cartographer-ros/latest/google-cartographer-ros.pdf[**document(pdf)**]
+** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://blog.csdn.net/luohuiwu/article/details/88890307[paper-in-Chinese]
 
-** https://blog.csdn.net/luohuiwu/article/details/88890307[Chinese translation]
+** **document(online)**: https://google-cartographer.readthedocs.io/en/latest/index.html[**cartographer-online**], 
+https://google-cartographer-ros.readthedocs.io/en/latest/index.html[**cartographer-ros-online**]
+
+** **document(pdf)**: 
+https://media.readthedocs.org/pdf/google-cartographer/latest/google-cartographer.pdf[**cartographer(pdf)**], 
+https://media.readthedocs.org/pdf/google-cartographer-ros/latest/google-cartographer-ros.pdf[**cartographer-ros(pdf)**]
+
+** **code**: https://github.com/googlecartographer/cartographer[**cartographer**], https://google-cartographer-ros.readthedocs.io/en/latest/index.html[**cartographer-ros**]
+
+
+** **data**:
+https://google-cartographer-ros.readthedocs.io/en/latest/demos.html[ROS-demo-bag-files]
 
 . [red]#*_Sparse Pose Adjustment_*# +
 Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
