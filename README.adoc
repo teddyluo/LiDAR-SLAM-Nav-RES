@@ -13,7 +13,7 @@ A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM tren
 . [big red yellow-background]*_Google Cartographer_* +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
-** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://blog.csdn.net/luohuiwu/article/details/88890307[paper-in-Chinese]
+** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://blog.csdn.net/luohuiwu/article/details/88890307[Chinese translation]
 
 ** **document(online)**: https://google-cartographer.readthedocs.io/en/latest/index.html[**cartographer-online**], 
 https://google-cartographer-ros.readthedocs.io/en/latest/index.html[**cartographer-ros-online**]
@@ -26,7 +26,32 @@ https://media.readthedocs.org/pdf/google-cartographer-ros/latest/google-cartogra
 
 
 ** **data**:
-https://google-cartographer-ros.readthedocs.io/en/latest/demos.html[ROS-demo-bag-files]
+https://google-cartographer-ros.readthedocs.io/en/latest/demos.html[ROS-demo-bag-files], 
+https://pan.baidu.com/s/1zfeaY9r1OudkaJ2Y7y-iCQ[**百度网盘下载**] (提取码: j47t)
+
+
+//// 
+*** Deutsches Museum: + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/cartographer_paper_deutsches_museum.bag[**2D backpack demo file, 470.52MB**], + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_3d/with_intensities/b3-2016-04-05-14-14-00.bag[**3D backpack demo file, 9.11GB**], + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/b2-2016-04-05-14-44-52.bag[**b2-2016-04-05-14-44-52.bag, 89.63MB**], + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_2d/b2-2016-04-27-12-31-41.bag[**b2-2016-04-27-12-31-41.bag, 222.36MB**], + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_3d/b3-2016-04-05-13-54-42.bag[**b3-2016-04-05-13-54-42.bag, 5.70GB**], + 
+https://storage.googleapis.com/cartographer-public-data/bags/backpack_3d/b3-2016-04-05-15-52-20.bag[**b3-2016-04-05-15-52-20.bag, 2.53GB**]
+
+*** Static landmarks: 
+https://storage.googleapis.com/cartographer-public-data/bags/mir/landmarks_demo_uncalibrated.bag[**landmarks_demo_uncalibrated.bag, 41.71MB**]
+
+*** Revo LDS: 
+https://storage.googleapis.com/cartographer-public-data/bags/revo_lds/cartographer_paper_revo_lds.bag[**cartographer_paper_revo_lds.bag, 3.30MB**]
+
+*** PR2: 
+https://storage.googleapis.com/cartographer-public-data/bags/pr2/2011-09-15-08-32-46.bag[**2011-09-15-08-32-46.bag, 3.66GB**]
+
+*** Taurob Tracker:
+https://storage.googleapis.com/cartographer-public-data/bags/taurob_tracker/taurob_tracker_simulation.bag[**taurob_tracker_simulation.bag, 42.35MB**]
+////
+
 
 . [red]#*_Sparse Pose Adjustment_*# +
 Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
