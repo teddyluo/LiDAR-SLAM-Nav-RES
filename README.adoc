@@ -15,19 +15,24 @@ Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2
 
 ** https://ai.google/research/pubs/pub45466.pdf[**paper**],  https://blog.csdn.net/luohuiwu/article/details/88890307[Chinese translation]
 
-** **document(online)**: https://google-cartographer.readthedocs.io/en/latest/index.html[**cartographer-online**], 
-https://google-cartographer-ros.readthedocs.io/en/latest/index.html[**cartographer-ros-online**]
+** **document(online)**: https://google-cartographer.readthedocs.io/en/latest/[Cartographer], 
+https://google-cartographer-ros.readthedocs.io/en/latest/[Cartographer ROS], 
+https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/[Cartographer ROS for TurtleBots]
 
 ** **document(pdf)**: 
-https://media.readthedocs.org/pdf/google-cartographer/latest/google-cartographer.pdf[**cartographer(pdf)**], 
-https://media.readthedocs.org/pdf/google-cartographer-ros/latest/google-cartographer-ros.pdf[**cartographer-ros(pdf)**]
+https://readthedocs.org/projects/google-cartographer/downloads/pdf/latest/[Cartographer], 
+https://readthedocs.org/projects/google-cartographer-ros/downloads/pdf/latest/[Cartographer ROS], 
+https://readthedocs.org/projects/google-cartographer-ros-for-turtlebots/downloads/pdf/latest/[Cartographer ROS for TurtleBots]
 
-** **code**: https://github.com/googlecartographer/cartographer[**cartographer**], https://google-cartographer-ros.readthedocs.io/en/latest/index.html[**cartographer-ros**]
-
+** **code**: https://github.com/googlecartographer/cartographer[Cartographer], https://github.com/googlecartographer/cartographer_ros[Cartographer ROS], 
+https://github.com/googlecartographer/cartographer_turtlebot[Cartographer ROS for TurtleBots]
 
 ** **data**:
 https://google-cartographer-ros.readthedocs.io/en/latest/demos.html[ROS-demo-bag-files], 
 https://pan.baidu.com/s/1zfeaY9r1OudkaJ2Y7y-iCQ[**百度网盘下载**] (提取码: j47t)
+
+** **source(compressed)**: 
+https://gitee.com/teddyluo/Google-Cartographer-Packages[Google-Cartographer-Packages]
 
 
 //// 
