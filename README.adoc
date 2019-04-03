@@ -58,17 +58,20 @@ https://storage.googleapis.com/cartographer-public-data/bags/taurob_tracker/taur
 ////
 
 
-. [red]#*_Sparse Pose Adjustment_*# +
+. [red]#*_Sparse Pose Adjustment (SPA)_*# +
 Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
 
 ** http://ais.informatik.uni-freiburg.de/publications/papers/konolige10iros.pdf[**paper**]
 
-. *_Scan Matching_* +
-Olson E B. Real-time correlative scan matching[C]//_2009 IEEE International Conference on Robotics and Automation_. IEEE, 2009: 4387-4393.
+. *_Correlative Scan Matching_* +
+  Olson E B. Real-time correlative scan matching[C]//_2009 IEEE International Conference on Robotics and Automation_. IEEE, 2009: 4387-4393.
+  ** https://april.eecs.umich.edu/media/pdfs/olson2009icra.pdf[**paper**]
 
-** https://april.eecs.umich.edu/media/pdfs/olson2009icra.pdf[**paper**]
+. [red]#*_Ceres Scan Matching_*# + 
+  Kohlbrecher S, Von Stryk O, Meyer J, et al. A flexible and scalable slam system with full 3d motion estimation[C]//_2011 IEEE International Symposium on Safety, Security, and Rescue Robotics_. IEEE, 2011: 155-160.
+  ** http://www.gkmm.informatik.tu-darmstadt.de/publications/files/slam2011.pdf[**paper**]
 
-. *_Branch and Bound Algorithm_* +
+. [red]#*_Branch and Bound Algorithm_*# +
 Clausen J. Branch and bound algorithms-principles and examples[J]. _Department of Computer Science, University of Copenhagen_, 1999: 1-30.
 
 ** http://janders.eecg.toronto.edu/1387/readings/b_and_b.pdf[paper]
