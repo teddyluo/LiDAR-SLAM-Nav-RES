@@ -102,3 +102,23 @@ $ rosrun rviz rviz
 #  2) FixedFrame: laser
 # Enjoy!
 ----
+
+
+#### __Error correction__
+
+. Network configuation problem:
+
+[source, bash]
+----
+$ ping 192.168.1.10
+PING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
+From 192.168.1.100 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.100 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.100 icmp_seq=3 Destination Host Unreachable
+----
+
+**Solution**:
+[source, bash]
+----
+$ ?
+----
