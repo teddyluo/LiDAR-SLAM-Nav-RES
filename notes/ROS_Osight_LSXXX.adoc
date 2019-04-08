@@ -8,7 +8,7 @@ Huiwu Luo <huiwu.luo@aliyun.com>
 A guide to install the Osight http://www.osighttech.com/pro_detail.php?id=10[LSXXX^TM^] LiDAR driver under ROS platform.
 
 [[img-osight]]
-image::./figs/Osight-LSXXX.png[align="center", caption="Fig. ", title="LSXXX^TM^ LiDAR", alt="Sunset", width="200", height="220", link="http://www.osighttech.com/pro_detail.php?id=10"]
+image::./figs/Osight-LSXXX.png[align="center", caption="", title="LSXXX^TM^ LiDAR", alt="Sunset", width="200", height="220", link="http://www.osighttech.com/pro_detail.php?id=10"]
 
 == Introduction
 
@@ -67,11 +67,12 @@ Geteway: 192.168.1.1
 [.float-group]
 --
 [.left]
-.image A
-image::./figs/Osight-conf-mac.png[A, 240, 180]
+.Network Configuration for MAC
+image::./figs/Osight-conf-mac.png[A, 400, 240]
+
 [.right]
-.image B
-image::./figs/Osight-conf-ip.png[A, 240, 180]
+.Network Configuration for IP
+image::./figs/Osight-conf-ip.png[A, 400, 240]
 --
 
 
