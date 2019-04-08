@@ -8,7 +8,7 @@ Huiwu Luo <huiwu.luo@aliyun.com>
 A guide to install the Osight http://www.osighttech.com/pro_detail.php?id=10[LSXXX^TM^] LiDAR driver under ROS platform.
 
 [[img-osight]]
-image::./figs/Osight-LSXXX.png[align="center", caption="Fig. ", title="LSXXX^TM^ LiDAR", alt="Sunset", width="100", height="200", link="http://www.osighttech.com/pro_detail.php?id=10"]
+image::./figs/Osight-LSXXX.png[align="center", caption="Fig. ", title="LSXXX^TM^ LiDAR", alt="Sunset", width="200", height="220", link="http://www.osighttech.com/pro_detail.php?id=10"]
 
 == Introduction
 
