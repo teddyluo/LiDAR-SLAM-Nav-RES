@@ -27,7 +27,7 @@ _(Note: we will make a few adjustments according to our experience.)_
 ``` bash
 $ cd ~
 $ wget  https://github.com/teddyluo/LiDAR-SLAM-RES/raw/master/notes/packages/catkin_osight.tar.gz
-$ tar jxvf catkin_osight.tar.gz
+$ tar xzvf ./catkin_osight.tar.gz
 ```
 
 * Compile driver:
@@ -76,7 +76,7 @@ image::./figs/Osight-conf-ip.png[A, 400, 240]
 --
 
 
-** Test network connection: ``
+** Test network connection:
 [source, bash]
 ----
 $ ping 192.168.1.10
