@@ -25,16 +25,16 @@ _(Note: we will make a few adjustments according to our experience.)_
 
 * Download ROS driver package:
 ``` bash
-cd ~
-wget  https://github.com/teddyluo/LiDAR-SLAM-RES/raw/master/notes/packages/catkin_osight.tar.gz
-tar jxvf catkin_osight.tar.gz
+$ cd ~
+$ wget  https://github.com/teddyluo/LiDAR-SLAM-RES/raw/master/notes/packages/catkin_osight.tar.gz
+$ tar jxvf catkin_osight.tar.gz
 ```
 
 * Compile driver:
 
 ``` bash
-cd ~/catkin_osight
-catkin_make
+$ cd ~/catkin_osight
+$ catkin_make
 ```
  
 * Configure working environment:
@@ -43,15 +43,15 @@ catkin_make
 For bash user:
 [source, bash]
 ----
-source devel/setup.bash
-echo "source ~/catkin_osight/devel/setup.bash" >> ~/.bashrc
+$ source devel/setup.bash
+$ echo "source ~/catkin_osight/devel/setup.bash" >> ~/.bashrc
 ----
 
 For zsh user:
 [source, bash]
 ----
-source devel/setup.zsh
-echo "source ~/catkin_osight/devel/setup.zsh" >> ~/.zshrc
+$ source devel/setup.zsh
+$ echo "source ~/catkin_osight/devel/setup.zsh" >> ~/.zshrc
 ----
 
 ==== Network Configuration
@@ -64,6 +64,40 @@ Network mask: 255.255.255.0
 Geteway: 192.168.1.1
 ----
 
-** Test network connection: `ping 192.168.1.10`
+[.float-group]
+--
+[.left]
+.image A
+image::./figs/Osight-conf-mac.png[A, 240, 180]
+[.right]
+.image B
+image::./figs/Osight-conf-ip.png[A, 240, 180]
+--
 
 
+** Test network connection: ``
+[source, bash]
+----
+$ ping 192.168.1.10
+PING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
+64 bytes from 192.168.1.10: icmp_seq=1 ttl=64 time=0.020 ms
+64 bytes from 192.168.1.10: icmp_seq=2 ttl=64 time=0.046 ms
+64 bytes from 192.168.1.10: icmp_seq=3 ttl=64 time=0.048 ms
+64 bytes from 192.168.1.10: icmp_seq=4 ttl=64 time=0.053 ms
+----
+
+==== Test ROS driver
+[source, bash]
+----
+# terminal-1: launch roscore 
+$ roscore
+# terminal-2: launch LSxxx node
+$ rosrun lsxxx LSxxx_node _hostPC:=192.168.1.100
+#
+# terminal-3: view results
+$ rosrun rviz rviz
+# additional operations:
+#  1) add by topic -> LaserScan -> Topic: /scan
+#  2) FixedFrame: laser
+# Enjoy!
+----
