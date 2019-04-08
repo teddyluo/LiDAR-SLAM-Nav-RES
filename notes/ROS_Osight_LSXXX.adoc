@@ -104,7 +104,7 @@ $ rosrun rviz rviz
 ----
 
 
-#### __Error correction__
+#### __Error diagnosis__
 
 . Network configuation problem:
 
