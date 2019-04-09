@@ -75,16 +75,20 @@ image::./figs/Osight-conf-mac.png[A, 400, 240]
 image::./figs/Osight-conf-ip.png[A, 400, 240]
 --
 
+_Note: Please ensure that the network has been correctly configured as shown in the following figure:_
+
+.Network Configuration Information
+image::./figs/Osight-conf-networkInfo.png[A, 400, 240]
 
 ** Test network connection:
 [source, bash]
 ----
 $ ping 192.168.1.10
 PING 192.168.1.10 (192.168.1.10) 56(84) bytes of data.
-64 bytes from 192.168.1.10: icmp_seq=1 ttl=64 time=0.020 ms
-64 bytes from 192.168.1.10: icmp_seq=2 ttl=64 time=0.046 ms
-64 bytes from 192.168.1.10: icmp_seq=3 ttl=64 time=0.048 ms
-64 bytes from 192.168.1.10: icmp_seq=4 ttl=64 time=0.053 ms
+64 bytes from 192.168.1.10: icmp_seq=1 ttl=255 time=0.286 ms
+64 bytes from 192.168.1.10: icmp_seq=2 ttl=255 time=0.520 ms
+64 bytes from 192.168.1.10: icmp_seq=3 ttl=255 time=0.357 ms
+64 bytes from 192.168.1.10: icmp_seq=4 ttl=255 time=0.374 ms
 ----
 
 ==== Test ROS driver
@@ -103,6 +107,11 @@ $ rosrun rviz rviz
 # Enjoy!
 ----
 
+You should see a similr results in the riviz windos: 
+
+.Network Configuration Information
+image::./figs/Osight-rviz-result.png[A, 400, 240]
+
 
 #### __Error diagnosis__
 
@@ -118,7 +127,6 @@ From 192.168.1.100 icmp_seq=3 Destination Host Unreachable
 ----
 
 **Solution**:
-[source, bash]
-----
-$ ?
-----
+====
+Tighten the screw  between the LiDAR sensor and the host computer.
+====
