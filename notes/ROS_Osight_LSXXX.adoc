@@ -68,17 +68,19 @@ Geteway: 192.168.1.1
 --
 [.left]
 .Network Configuration for MAC
-image::./figs/Osight-conf-mac.png[A, 400, 240]
+image::./figs/Osight-conf-mac.png[A, 400, 300]
 
-[.right]
+[.left]
 .Network Configuration for IP
-image::./figs/Osight-conf-ip.png[A, 400, 240]
+image::./figs/Osight-conf-ip.png[A, 400, 300]
 --
+
 
 _Note: Please ensure that the network has been correctly configured as shown in the following figure:_
 
-.Network Configuration Information
-image::./figs/Osight-conf-networkInfo.png[A, 400, 240]
+.IP Information
+image::./figs/Osight-conf-networkInfo.png[A, 400, 400]
+
 
 ** Test network connection:
 [source, bash]
@@ -109,7 +111,7 @@ $ rosrun rviz rviz
 
 You should see a similr results in the riviz windos: 
 
-.Network Configuration Information
+.riviz results
 image::./figs/Osight-rviz-result.png[A, 400, 240]
 
 
