@@ -87,8 +87,7 @@ link:./notes/ROS_Osight_LSXXX.adoc[*configuration*]
 
 
 == Reference
-Repository was inspired by:
-
-* https://github.com/Ewenwan/MVision[MVision Machine Vision]
-
+Repository was inspired by https://github.com/Ewenwan/MVision[MVision Machine Vision]
+////
 * https://github.com/tzutalin/awesome-visual-slam[awesome-visual-slam]
+////

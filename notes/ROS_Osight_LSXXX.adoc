@@ -109,10 +109,24 @@ $ rosrun rviz rviz
 # Enjoy!
 ----
 
-You should see a similr results in the riviz windos: 
+Now you should see a similr riviz window that displays the LiDAR scans: 
 
 .riviz results
 image::./figs/Osight-rviz-result.png[A, 400, 240]
+
+
+== Working with Cartographer under Turtlebot 2
+. Install https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/[Cartographer ROS for TurtleBots].
+
+. Test `Cartographer ROS for TurtleBots` using recorded bag file: `cartographer_turtlebot_demo.bag`
+
+* Download from Google driver: https://storage.googleapis.com/cartographer-public-data/bags/turtlebot/cartographer_turtlebot_demo.bag[Link]
+* (Alternate) Download from Baidu network disk: https://pan.baidu.com/s/1udKULSHS0Rb57gEwkR_aMg[Link], with extraction code: `gpun`
+
+. Run Cartographer under Turtlebot 2 with LSXXX LiDAR sensor:
+====
+(to be continued)
+====
 
 
 #### __Error diagnosis__
