@@ -114,8 +114,22 @@ Now you should see a similr riviz window that displays the LiDAR scans:
 .riviz results
 image::./figs/Osight-rviz-result.png[A, 400, 240]
 
+== Working with GMapping (Turtlebot 2)
+[source, bash]
+----
+# launch master
+$ roscore
+#
+# mapping with LSXXX
+$ roslaunch lsxxx lsxxx_gmapping_demo.launch
+#
+# save map data
+$ mkdir -p ~/map
+$ rosrun map_server map_saver -f ~/map/LSxxx_gmapping
+$ ls ~/map
+----
 
-== Working with Cartographer under Turtlebot 2
+== Working with Cartographer (Turtlebot 2)
 . Install https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/[Cartographer ROS for TurtleBots].
 
 . Test `Cartographer ROS for TurtleBots` using recorded bag file: `cartographer_turtlebot_demo.bag`
@@ -124,10 +138,27 @@ image::./figs/Osight-rviz-result.png[A, 400, 240]
 * (Alternate) Download from Baidu network disk: https://pan.baidu.com/s/1udKULSHS0Rb57gEwkR_aMg[Link], with extraction code: `gpun`
 
 . Run Cartographer under Turtlebot 2 with LSXXX LiDAR sensor:
+[source, bash]
+----
+# launch master
+$ roscore
+#
+# launch lsxxx 
+$ roslaunch lsxxx LSxxx_tf.launch
+#
+# launch Cartographer
+$ roslaunch lsxxx turtlebot_lidar_2d.launch
+#
+# save map data
+$ rosservice call /write_state 'carto_map.pbstream'
+$ mv ~/.ros/carto_map.pbstream  ~/map
+$ rosrun cartographer_ros cartographer_pbstream_to_ros_map -map_filestem=($HOME)/map/carto_map  -pbstream_filename=($HOME)/map/carto_map.pbstream -resolution=0.05
+----
+////
 ====
 (to be continued)
 ====
-
+////
 
 #### __Error diagnosis__
 

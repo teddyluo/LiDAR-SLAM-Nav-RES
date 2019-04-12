@@ -1,5 +1,6 @@
 # latex source 
 /latex-docs
+/notes/packages/catkin_osight
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
