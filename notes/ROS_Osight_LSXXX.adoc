@@ -115,6 +115,7 @@ Now you should see a similr riviz window that displays the LiDAR scans:
 image::./figs/Osight-rviz-result.png[A, 400, 240]
 
 == Working with GMapping (Turtlebot 2)
+_(Note: launch file is placed at `~/catkin_osight/src/lsxxx/launch`.)_
 
 [source, bash]
 ----
@@ -139,6 +140,8 @@ $ ls ~/map
 * (Alternate) Download from Baidu network disk: https://pan.baidu.com/s/1udKULSHS0Rb57gEwkR_aMg[Link], with extraction code: `gpun`
 
 . Run Cartographer under Turtlebot 2 with LSXXX LiDAR sensor:
+
+_(Note: launch files are placed at `~/catkin_osight/src/lsxxx/launch`.)_
 
 [source, bash]
 ----
