@@ -9,7 +9,7 @@ A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM tren
 
 '''
 
-== Papers
+== Papers -- LiDAR SLAM Techs.
 . [big red yellow-background]*_Google Cartographer_* +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
@@ -76,9 +76,21 @@ Clausen J. Branch and bound algorithms-principles and examples[J]. _Department o
 
 ** http://janders.eecg.toronto.edu/1387/readings/b_and_b.pdf[paper]
 
+== Articles -- LiDAR SLAM Survey
+. Castellanos, J.A., Neira, J., & Tardós, J.D. (2005). http://webdiis.unizar.es/GRPTR/pubs/Caste_AMR_2006.pdf[*_Map Building and SLAM Algorithms_*].
+. Santos, J. M., Portugal, D., & Rocha, R. P. (2013, October). http://eprints.lincoln.ac.uk/14672/1/06719348.pdf[*_An evaluation of 2D SLAM techniques available in robot operating system_*]. In 2013 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR) (pp. 1-6). IEEE.
+. Mendes, E., Koch, P., & Lacroix, S. (2016, October). https://core.ac.uk/download/pdf/29175747.pdf[*_ICP-based pose-graph SLAM_*]. In 2016 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR) (pp. 195-200). IEEE.
+. Alexandersson, J., & Nordin, O. (2017). https://liu.diva-portal.org/smash/get/diva2:1218791/FULLTEXT01.pdf[*_Implementation of SLAM algorithms in a small-scale vehicle using model-based development_*].
+. Yagfarov, Rauf & Ivanou, Mikhail & Afanasyev, Ilya. (2018). https://www.researchgate.net/publication/330168394_Map_Comparison_of_Lidar-based_2D_SLAM_Algorithms_Using_Precise_Ground_Truth[*_Map Comparison of Lidar-based 2D SLAM Algorithms Using Precise Ground Truth_*]. 10.1109/ICARCV.2018.8581131. 
+. Felipe Jiménez, Miguel Clavijo and Javier Juana. (VEHICULAR 2018). https://www.thinkmind.org/download.php?articleid=vehicular_2018_4_20_30043[*_LiDAR-based SLAM algorithm for indoor scenarios_*]. 
+. Yagfarov, R., Ivanou, M., & Afanasyev, I. (2018, November).  https://www.researchgate.net/publication/328007381_Comparison_of_Various_SLAM_Systems_for_Mobile_Robot_in_an_Indoor_Environment[*_Map Comparison of Lidar-based 2D SLAM Algorithms Using Precise Ground Truth_*]. In 2018 15th International Conference on Control, Automation, Robotics and Vision (ICARCV) (pp. 1979-1983). IEEE.
+. Kümmerle, R., Steder, B., Dornhege, C., Ruhnke, M., Grisetti, G., Stachniss, C., & Kleiner, A. (2009). http://www2.informatik.uni-freiburg.de/~stachnis/pdf/kuemmerle09auro.pdf[*_On measuring the accuracy of SLAM algorithms_*]. Autonomous Robots, 27(4), 387.
+. Chen, Y., Tang, J., Jiang, C., Zhu, L., Lehtomäki, M., Kaartinen, H., ... & Zhou, H. (2018). https://www.mdpi.com/1424-8220/18/10/3228/pdf[*_The accuracy comparison of three simultaneous localization and mapping (SLAM)-Based indoor mapping technologies_*]. Sensors, 18(10), 3228.
 
-== Notes
-(to be continued)
+
+== Technical Articles
+. Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*], 2016. https://blog.csdn.net/zong596568821xp/article/details/77934688[*Chinese translation*]
+
 
 == Projects
 
