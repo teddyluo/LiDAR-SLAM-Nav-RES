@@ -19,10 +19,18 @@ link:./notes/ROS_Osight_LSXXX.adoc[*configuration*]
 == Current Project: Motion Planning
 
 === Papers
-. Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*], 2016. https://blog.csdn.net/zong596568821xp/article/details/77934688[*中文翻译*]
+. [red]#*_ROS Navigation Tuning Guide_*# +
+** Paper: Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*]. arXiv preprint arXiv:1706.09068v2, Sep. 2016.
+** https://blog.csdn.net/zong596568821xp/article/details/77934688[*中文翻译 (poor quality)*]
+** http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide[ROS Wiki]
 
-. D. V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715.+
+. [red]#*_ROS Costmaps_*# +
+David V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715.
  ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF],  https://scholar.google.com/citations?user=bfksbjAAAAAJ&hl=zh-CN[Google Scholar]
+//// 
+. [red]#*_Sparse Pose Adjustment (SPA)_*# +
+Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for 2D mapping[C]//_2010 IEEE/RSJ International Conference on Intelligent Robots and Systems_. IEEE, 2010: 22-29.
+////
  
 === Projects
 . ROS Navigation Stack +
