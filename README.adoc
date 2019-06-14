@@ -9,16 +9,7 @@ A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM tren
 
 '''
 
-== Project I: Hardware Configuration
-
-. Laser: Osight LSXXX^TM^ laser sensor configuration & test: +
-link:./notes/ROS_Osight_LSXXX.adoc[*configuration*]
-
-. IMU: 
-** https://github.com/KristofRobot/razor_imu_9dof[Sparkfun 9DoF Razor IMU (MPU-9250)]
-** https://github.com/teddyluo/hipnuc_imu_ros[HiPNUC HI216]
-
-== Current Project: Motion Planning
+== (Current) Project III -- Motion Planning
 
 === Papers
 . [red]#*_ROS Navigation Tuning Guide_*# +
@@ -46,7 +37,16 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 ** https://www.ncnynl.com/category/ros-navigation/[ROS与navigation教程 by 创客智造]
 
 
-== Project II: Google Cartographer -- Laser-based SLAM
+== Project I -- Hardware Configuration: Laser and IMU Sensors
+
+. Laser: Osight LSXXX^TM^ laser sensor configuration & test: +
+link:./notes/ROS_Osight_LSXXX.adoc[*configuration*]
+
+. IMU: 
+** https://github.com/KristofRobot/razor_imu_9dof[Sparkfun 9DoF Razor IMU (MPU-9250)]
+** https://github.com/teddyluo/hipnuc_imu_ros[HiPNUC HI216]
+
+== Project II -- Laser-based SLAM (Part 1): Google Cartographer
 . [big red yellow-background]*_Google Cartographer_* +
 Hess W, Kohler D, Rapp H, et al. Real-time loop closure in 2D LIDAR SLAM [C]//_2016 IEEE International Conference on Robotics and Automation (ICRA)_. IEEE, 2016: 1271-1278.
 
@@ -113,7 +113,7 @@ Clausen J. Branch and bound algorithms-principles and examples[J]. _Department o
 
 ** http://janders.eecg.toronto.edu/1387/readings/b_and_b.pdf[paper]
 
-== Project II (con.):  LiDAR SLAM Survey
+== Project II -- Laser-based SLAM (Part 2):  LiDAR SLAM Survey
 . Castellanos, J.A., Neira, J., & Tardós, J.D. (2005). http://webdiis.unizar.es/GRPTR/pubs/Caste_AMR_2006.pdf[*_Map Building and SLAM Algorithms_*].
 . Santos, J. M., Portugal, D., & Rocha, R. P. (2013, October). http://eprints.lincoln.ac.uk/14672/1/06719348.pdf[*_An evaluation of 2D SLAM techniques available in robot operating system_*]. In 2013 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR) (pp. 1-6). IEEE.
 . Mendes, E., Koch, P., & Lacroix, S. (2016, October). https://core.ac.uk/download/pdf/29175747.pdf[*_ICP-based pose-graph SLAM_*]. In 2016 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR) (pp. 195-200). IEEE.
