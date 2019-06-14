@@ -14,7 +14,9 @@ A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM tren
 . Laser: Osight LSXXX^TM^ laser sensor configuration & test: +
 link:./notes/ROS_Osight_LSXXX.adoc[*configuration*]
 
-. IMU: https://github.com/KristofRobot/razor_imu_9dof[Sparkfun 9DoF Razor IMU (MPU-9250)]
+. IMU: 
+** https://github.com/KristofRobot/razor_imu_9dof[Sparkfun 9DoF Razor IMU (MPU-9250)]
+** https://github.com/teddyluo/hipnuc_imu_ros[HiPNUC HI216]
 
 == Current Project: Motion Planning
 
@@ -33,6 +35,8 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 ////
  
 === Projects
+. [red]#*_PythonRobotics_*# +
+** https://github.com/AtsushiSakai/PythonRobotics[github (!!Excellent!!)]
 . ROS Navigation Stack +
 ** https://github.com/ros-planning/navigation[github]
 
