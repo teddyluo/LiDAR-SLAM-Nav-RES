@@ -46,8 +46,8 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 
 === AGV Standards
 
-- 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[(alternative)]
-- 《GB/T 30030 自动导引车（AGV） 术语》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC56D3A7E05397BE0A0AB82A[pdf],  http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=6[(alternative)]
+- 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[pdf(alternative)]
+- 《GB/T 30030 自动导引车（AGV） 术语》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC56D3A7E05397BE0A0AB82A[pdf],  http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=6[pdf(alternative)]
 - 《GB/T 20721 自动导引车 通用技术条件》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7F46CD3A7E05397BE0A0AB82A[pdf]
  
 === Projects
