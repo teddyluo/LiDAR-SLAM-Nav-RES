@@ -5,7 +5,7 @@ v0.1, 2019-03-26
 :icons: font
 
 [.lead]
-A page of `LiDAR SLAM Resources` (LiDAR-SLAM-RES) to follow up current SLAM trends and papers.
+A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-RES) to follow up current LiDAR-based SLAM/Navigation trends and papers.
 
 '''
 
@@ -28,7 +28,7 @@ Guimarães R L, de Oliveira A S, Fabro J A, et al. *_ROS navigation: Concepts an
  
 . [red]#*_ROS Navigation Tuning Guide_*# +
 ** Paper: Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*]. arXiv preprint arXiv:1706.09068v2, Sep. 2016.
-** https://blog.csdn.net/zong596568821xp/article/details/77934688[*中文翻译 (poor quality)*]
+** https://github.com/teddyluo/ROSNavGuide-Chinese[*中文翻译*]
 ** http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide[ROS Wiki]
 
 
