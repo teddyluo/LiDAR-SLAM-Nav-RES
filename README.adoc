@@ -60,6 +60,7 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 ** http://wiki.ros.org/cn/navigation[ROS Nav Wiki]
 ** https://zhuanlan.zhihu.com/ros-nav[ROS Navigation Stack源码学习]
 ** https://www.ncnynl.com/category/ros-navigation/[ROS与navigation教程 by 创客智造]
+** link:./notes/Turtle2eNavParamExp.md[*Turtlebot 2e 导航之move_base参数详解*]
 
 
 == Project I -- Hardware Configuration: Laser and IMU Sensors
