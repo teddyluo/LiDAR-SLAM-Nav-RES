@@ -31,6 +31,16 @@ Guimarães R L, de Oliveira A S, Fabro J A, et al. *_ROS navigation: Concepts an
 ** https://github.com/teddyluo/ROSNavGuide-Chinese[*中文翻译*]
 ** http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide[ROS Wiki]
 
+. [red]#*_Robotics Engineering 2: ROS-Turtlebot Motion Control and Navigation_*# +
+** Paper: AK Assad, Mashruf Chowdhury, and Yanik Porto, *_Robotics Engineering 2: ROS-Turtlebot Motion Control and Navigation_*. May 11, 2015.
+** type:pdf, http://mangoprojects.info/wp-content/uploads/2015/06/ros_report.pdf[*link*]
+
+
+=== Books
+. [red]#*_Robotics_*# (Release 1.4) +
+** Author: Jeff McGough, Book title: *_Robotics_*. Date: Dec 02, 2018.
+** type:pdf, http://roboscience.org/book/Robotics.pdf[*link*]
+
 
 //// 
 . [red]#*_Sparse Pose Adjustment (SPA)_*# +
