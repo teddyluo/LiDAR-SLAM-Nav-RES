@@ -28,7 +28,7 @@ ROS的`move_base`正如其名，是用于基座移动的功能包，用于实现
 
 可见建图的过程中采用的是默认参数，而导航过程考虑了3D sensor的传感器特征。以下看看各种传感器的`costmap_param.yaml`定义：
 ```bash
-$ ls -al                               
+$ ls -al
 total 48
 lrwxrwxrwx 1 teddyluo teddyluo   10 5月  15 20:43 astra_costmap_params.yaml -> dummy.yaml
 lrwxrwxrwx 1 teddyluo teddyluo   10 5月  15 20:43 asus_xtion_pro_costmap_params.yaml -> dummy.yaml
@@ -383,13 +383,8 @@ odom和map坐标系在机器人运动开始是重合的。但是，随着时间�
 
 下面我们先看看环境代价地图的定义，再理解规划器的设置，最后看看move_base启动本身。
 
-## 全局代价地图的设置
-全局代价地图的设置主要有两个文件：
-```xml
-<rosparam file="$(find turtlebot_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-<rosparam file="$(find turtlebot_navigation)/param/global_costmap_params.yaml" command="load" />
-```
-其中，`costmap_common.yaml`为costmap的通用参数设置,定义为
+## 通用代价设置`costmap_common_params.yaml`
+`costmap_common_params.yaml`整个文件定义为
 ```yaml
 max_obstacle_height: 0.60  # assume something like an arm is mounted on top of the robot
 
@@ -440,6 +435,464 @@ inflation_layer:
 
 static_layer:
   enabled:              true
+```
+解析(http://wiki.ros.org/costmap_2d/hydro/obstacles)：
+- `max_obstacle_height: 0.60` #传感器读数的最大有效高度，单位为 meters; 通常设置为略高于机器人的实际高度，高度是指包含机械臂打直情况下的最大高度。
+- `robot_radius: 0.20` 机器人半径(圆形), kobuki是0.18m
+- `footprint: [[x0, y0], [x1, y1], ... [xn, yn]]` 当机器人非圆形时，先找机器人的旋转中心，即两个轮的中心点设置成(0,0)，然后确定机器人摆放方向，x,y为每个robot几何型的每条边的每个顶点。将所有顶点都列到其中。就完成了robot的footprint。
+- `map_type: voxel` 地图类型，这里为`voxel`(体素地图)。另一种地图类型为`costmap`(代价地图)。这两者之间的区别是前者是世界的3D表示，后者为世界的2D表示。
+- `obstacle_layer` 障碍物层参数
+  - `enabled`:              `true` #启用
+  - `max_obstacle_height:  0.6` 传感器读数的最大有效高度（单位：m）。 通常设置为略高于机器人的高度。 此参数设置为大于全局max_obstacle_height参数的值将会失效。 设置为小于全局max_obstacle_height的值将过滤掉传感器上大于该高度以的点。
+  - `origin_z:             0.0` z原点，单位为米，仅对voxel地图
+  - `z_resolution:         0.2` z分辨率，单位meters/cell
+  - `z_voxels:             2` 每个垂直列中的体素数目，ROS Nav功能包的默认值为10。请参考《ROS导航功能调优指南》https://github.com/teddyluo/ROSNavGuide-Chinese
+  - `unknown_threshold:    15` 当整列的voxel是“已知”(``known'')的时候，含有的未知单元(“unknown”)的最大数量
+  - `mark_threshold:       0` 整列voxel是“自由”("free")的时候，含有的已标记的cell(“marked”)的最大数目。
+  - `combination_method:   1` 处理obstacle_laye之外的其他层传入数据的行为方式，枚举型(enum)。可能的取值有：覆盖已有值"Overwrite" (0), 取最大值"Maximum" (1), 什么也不干"Nothing" (99)。“覆盖”仅是“覆盖”其他层的数据，例如使得它们没有生效。 “取最大值”是多数时候需要的。 它提取obstacle_layer或输入数据中提供的数据的最大值。 “Nothing”根本不会改变传入的数据。 请注意，这会极大地影响costmap的行为方式，具体取决于您对track_unkown_space的设置。
+  - `track_unknown_space:  true` 如果为false，每个像素具有两种状态之一：致命障碍(lethal)或自由(free)。 如果为true，则每个像素具有3种状态之一：致命障碍(lethal)，自由(free)或未知(unknown)。
+  - `obstacle_range: 2.5`  将障碍物插入代价地图的最大范围，单位为 meters。
+  - `raytrace_range: 3.0` 从地图中扫描出障碍物的最大范围，单位为 meters 。
+  - `origin_z: 0.0` z原点，单位为米，仅对voxel地图（为什么定义2次？）
+  - `z_resolution: 0.2` （为什么定义2次？）
+  - `z_voxels: 2` （为什么定义2次？）
+  - `publish_voxel_map: false` 是否发布底层的体素栅格地图，其主要用于可视化。
+  - `observation_sources:  scan bump` # 观察源，我们这里是激光数据(scan)和凸点数据(bump)。观察源列表以空格分割表示，定义了下面参数中每一个 <source_name> 命名空间。
+  - `scan`: 观察源之一：激光数据。定义了：观察源的数据类型，发布话题，标记和添加障碍物
+    - `data_type: LaserScan` 观察源的数据类型：激光扫描
+    - `topic: scan` 发布话题为`scan`
+    - `marking: true` 启用标记障碍物功能
+    - `clearing: true` 启用清除障碍物功能
+    注：关于Marking and Clearing：
+       - marking和clearing参数用来表示是否需要使用传感器的实时信息来添加或清除代价地图中的障碍物信息）
+       - 代价地图自动订阅传感器主题并自动更新。
+       - 每个传感器用于标记操作（将障碍物信息插入到代价地图中），清除操作（从代价地图中删除障碍物信息）或两者操作都执行。
+       - 如果使用的是体素层，每一列上的障碍信息需要先进行投影转化成二维之后才能放入代价地图中。
+    - `min_obstacle_height: 0.25` 传感器最低有效读数，以米为单位。通常设置为地面高度，但可以根据传感器的噪声模型设置为更高或更低。
+    - `max_obstacle_height: 0.35` 传感器读数的最大有效高度，以米为单位。通常设置为略大于机器人的最大高度。设置为大于全局的max_obstacle_height的值会失效。设置为小于全局max_obstacle_height将从传感器上过滤掉该高度以上的点。
+  - `bump`:观察源之二：凸点数据。定义了：观察源的数据类型，发布话题，标记和添加障碍物功能及定义传感器源数值的有效范围
+    - `data_type: PointCloud2`   数据类型为点云
+    - `topic: mobile_base/sensors/bumper_pointcloud` Topic为mobile_base/sensors/bumper_pointcloud
+    - `marking: true` 启用标记障碍物功能
+    - `clearing: false` 关闭清除障碍物功能
+    - `min_obstacle_height: 0.0` 传感器最低有效读数，以米为单位。
+    - `max_obstacle_height: 0.15` 传感器读数的最大有效高度，以米为单位。
+- `inflation_layer`: 膨胀层参数
+  - `enabled`:              true 启用膨胀地图
+  - `cost_scaling_factor:  5.0`  # exponential rate at which the obstacle cost drops off (default: 10)
+在膨胀期间应用于代价值的尺度因子。默认值：10。对在内接半径之外的cells、以及在内接半径之内的cells这两种不同的cells, 代价函数的计算公式为：
+ `exp(-1.0 * cost_scaling_factor * (distance_from_obstacle - inscribed_radius)) * (costmap_2d::INSCRIBED_INFLATED_OBSTACLE - 1)`
+ 
+其中`costmap_2d::INSCRIBED_INFLATED_OBSTACLE`当前取值为254.注意：由于`cost_scaling_factor`在公式中乘以负数，因此增加该因子的值会减少它的cost。
+
+对该效果讨论请参考《ROS导航功能调优指南》。
+
+  - inflation_radius:     0.5  # max. distance from an obstacle at which costs are incurred for planning paths.
+ 代价地图膨胀半径，以米为单位。默认值：0.55
+- static_layer: 静态地图层
+  - enabled:              true 启用静态地图
+
+## 全局代价地图的设置
+全局代价地图的设置主要有两个文件：
+```xml
+<rosparam file="$(find turtlebot_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+<rosparam file="$(find turtlebot_navigation)/param/global_costmap_params.yaml" command="load" />
+```
+其中，
+- `costmap_common.yaml`为costmap的通用参数设置
+- `global_costmap_params.yaml'为全局costmap的设置。
+`costmap_common.yaml`在前面已有介绍。这里介绍`global_costmap_params.yaml'。它的定义为：
+
+```xml
+global_costmap:
+   global_frame: /map
+   robot_base_frame: /base_footprint
+   update_frequency: 1.0
+   publish_frequency: 0.5
+   static_map: true
+   transform_tolerance: 0.5
+   plugins:
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+```
+解析：
+- `global_frame: /map` 全局代价地图需要在map参考坐标系下运行
+- `robot_base_frame: /base_footprint` 全局代价地图使用机器人本体参考坐标系
+- `update_frequency: 1.0` 全局地图信息更新的频率，单位是Hz
+- `publish_frequency: 0.5` 发布频率，用于显示(例如rviz等)
+- `static_map: true` 代价地图是否需要map_server提供的地图信息进行初始化。如果不需要使用已有的地图或者map_server，最好将该参数设置为false
+- `transform_tolerance: 0.5` tf变换最大延时
+global map引入了以下三层，经融合构成了master map，用于global planner
+- plugins: 插件定义
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"} 静态地图层
+     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}  障碍地图层
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"} 膨胀地图层，用于留出足够的安全距离
+
+## 局部代价地图的设置`local_costmap_params.yaml`
+局部代价地图的设置主要有两个文件：
+```xml
+<rosparam file="$(find turtlebot_navigation)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+<rosparam file="$(find turtlebot_navigation)/param/local_costmap_params.yaml" command="load" />
+```
+其中，
+- `costmap_common.yaml`为costmap的通用参数设置，`costmap_common.yaml`在前面已有介绍。
+- `local_costmap_params.yaml'局部costmap的设置。
+- 
+这里介绍`local_costmap_params.yaml'。它的定义为：
+
+```xml
+local_costmap:
+   global_frame: odom
+   robot_base_frame: /base_footprint
+   update_frequency: 5.0
+   publish_frequency: 2.0
+   static_map: false
+   rolling_window: true
+   width: 4.0
+   height: 4.0
+   resolution: 0.05
+   transform_tolerance: 0.5
+   plugins:
+    - {name: obstacle_layer,      type: "costmap_2d::VoxelLayer"}
+    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}
+```
+解析
+- `global_frame: odom` 局部代价地图使用`odom`坐标系
+- `robot_base_frame: /base_footprint` 机器人本体参考坐标系为`/base_footprint`
+- `update_frequency: 5.0` 局部地图更新频率
+- `publish_frequency: 2.0` 发布显示频率
+- `static_map: false` 不使用静态地图
+- `rolling_window: true` 与上面`static_map`相反，滚动窗口地图，保持机器人处于中心位置
+- `width: 4.0` 
+- `height: 4.0`
+- `resolution: 0.05`
+代价地图宽（米）、高（米）和分辨率（米/格）。分辨率可以设置的与静态地图不同，但是一般情况下两者是相同的。
+- `transform_tolerance: 0.5` tf变换最大延时
+- `plugins:` 启用的功能主要有：
+    - `{name: obstacle_layer,      type: "costmap_2d::VoxelLayer"}` 障碍层
+    - `{name: inflation_layer,     type: "costmap_2d::InflationLayer"}` 膨胀层
+
+## 全局规划器的设置
+一般来说，全局路径的规划插件包括：
+- `navfn:ROS`:比较旧的代码实现了dijkstra和A*全局规划算法。
+- `global_planner`:重新实现了Dijkstra和A*全局规划算法,可以看作navfn的改进版。
+- `parrot_planner`:一种简单的算法实现全局路径规划算法。
+
+### `global_planner_params`
+```bash
+GlobalPlanner:                                  # Also see: http://wiki.ros.org/global_planner
+  old_navfn_behavior: false                     # Exactly mirror behavior of navfn, use defaults for other boolean parameters, default false
+  # 若在某些情况下,想让global_planner完全复制navfn的功能,那就设置为true,但是需要注意navfn是非常旧的ROS系统中使用的,现在已经都用global_planner代替navfn了,所以不建议设置为true.
   
+  use_quadratic: true                           # Use the quadratic approximation of the potential. Otherwise, use a simpler calculation, default true
+  # 设置为true,将使用二次函数近似函数,否则使用更加简单的计算方式,这样节省硬件计算资源。默认值为true
+  
+  use_dijkstra: true                            # Use dijkstra's algorithm. Otherwise, A*, default true
+  #采用dijkstra算法？设置为true采用dijkstra算法；设置为false将采用A*算法。默认：true
+  
+  use_grid_path: false                          # Create a path that follows the grid boundaries. Otherwise, use a gradient descent method, default false
+  # 如果设置为true,则会规划一条沿着网格边界的路径,偏向于直线穿越网格,否则将使用梯度下降算法,路径更为光滑点.默认:false（梯度下降）
+  # 效果对比请参看《ROS导航功能调优指南》
+  
+  allow_unknown: true                           # Allow planner to plan through unknown space, default true
+                                                #Needs to have track_unknown_space: true in the obstacle / voxel layer (in costmap_commons_param) to work
+  #指定是否允许路径规划器在未知空间创建路径规划。
+  #注意：如果使用带有体素或障碍层的分层costmap_2d costmap，还必须将该层的track_unknown_space参数设置为true，否则会将所有未知空间转换为可用空间。
+  #解析：该参数指定是否允许规划器规划穿过未知区域的路径,只设计该参数为true还不行,还要在costmap_commons_params.yaml中设置track_unknown_space参数也为true才行
+                                                
+  planner_window_x: 0.0                         # default 0.0
+  #指定可选窗口的x大小以限定规划器工作空间。其有利于限定路径规划器在大型代价地图的小窗口下工作
+  
+  planner_window_y: 0.0                         # default 0.0
+  #指定可选窗口的y大小以限定规划器工作空间。其有利于限定路径规划器在大型代价地图的小窗口下工作
+  
+  default_tolerance: 0.0                        # If goal in obstacle, plan to the closest point in radius default_tolerance, default 0.0
+  #当设置的目的地被障碍物占据时,需要以该参数为半径寻找到最近的点作为新目的地点。默认值为0.0
+  
+  publish_scale: 100                            # Scale by which the published potential gets multiplied, default 100
+  # 将发布的potential的点乘以scale以计算探测的点，计算公式为：
+  # grid.data[i] = potential_array_[i] * publish_scale_ / max，计算的大小就是1-99，全部都是算法探测到的点
+  # https://blog.csdn.net/qq_41906592/article/details/89185808
+  
+  planner_costmap_publish_frequency: 0.0        # default 0.0
+  #规划器代价图发布频率，默认0.0HZ
+  
+  lethal_cost: 253                              # default 253
+  # 致命代价值,默认是设置为253,可以动态来配置该参数.
+  
+  neutral_cost: 50                              # default 50
+  #中等代价值,默认设置是50,可以动态配置该参数.
+  
+  cost_factor: 3.0                              # Factor to multiply each cost from costmap by, default 3.0
+  # 代价地图与每个代价值相乘的因子.默认值为3.0
+  publish_potential: true                       # Publish Potential Costmap (this is not like the navfn pointcloud2 potential), default true
+  # 是否发布costmap的势函数.
+```
+
+### `navfn_global_planner_params.yaml`
+
+```bash
+NavfnROS:
+  visualize_potential: false    #Publish potential for rviz as pointcloud2, not really helpful, default false
+  #指定是否通过PointCloud2来可视化由navfn计算的潜在区域。实际作用不大，默认值为false
+  
+  allow_unknown: false          #Specifies whether or not to allow navfn to create plans that traverse unknown space, default true
+                                #Needs to have track_unknown_space: true in the obstacle / voxel layer (in costmap_commons_param) to work
+  # 指定是否允许navfn在unknown空间创建路径规划。
+  #注意：如果你使用带有体素或障碍层的分层 costmap_2d 代价地图，那么需将该图层的track_unknown_space参数设置为true，否则所有未知空间将转换为自由空间(which navfn will then happily go right through)。
+  
+  planner_window_x: 0.0         #Specifies the x size of an optional window to restrict the planner to, default 0.0
+  #指定可选窗口的x大小以限定规划器工作空间。其有利于限定NavFn在大型代价地图的小窗口下工作
+  
+  planner_window_y: 0.0         #Specifies the y size of an optional window to restrict the planner to, default 0.0
+  #指定可选窗口的y大小以限定规划器工作空间。其有利于限定NavFn在大型代价地图的小窗口下工作
+  
+  default_tolerance: 0.0        #If the goal is in an obstacle, the planer will plan to the nearest point in the radius of default_tolerance, default 0.0
+                                #The area is always searched, so could be slow for big values
+  #定义路径规划器目标点的公差范围。NavFn将试图创建尽可能接近指定目标的路径规划，但不会超过 default_tolerance
 
 ```
+
+## 局部规划器的设置
+
+局部路径规划参数相当重要，因为它是直接控制机器人的移动底盘运动的插件，它负责来向移动底盘的/cmd_vel话题中发布控制命令。机器人移动的效果好不好，这个局部路径规划可是影响最大的。
+
+局部路径的规划插件包括：
+- `base_local_planner`:实现了Trajectory Rollout和DWA两种局部规划算法。
+- `dwa_local_planner`:实现了DWA局部规划算法，可以看作是base_local_planner的改进版本
+
+dwa_local_planner是一个能够驱动底盘移动的控制器,该控制器连接了路径规划器和机器人.使用地图,规划器产生从起点到目标点的运动轨迹,在移动时,规划器在机器人周围产生一个函数,用网格地图表示。控制器的工作就是利用这个函数来确定发送给机器人的速度(dx, dy, dtheta)。
+
+DWA算法的基本思想：
+  1.在机器人控制空间离散采样(dx, dy, dtheta)
+  2.对每一个采样的速度进行前向模拟,看看在当前状态下,使用该采样速度移动一小段时间后会发生什么.
+  3.评价前向模拟得到的每个轨迹,是否接近障碍物,是否接近目标,是否接近全局路径以及速度等等.舍弃非法路径
+  4.选择得分最高的路径,发送对应的速度给底座
+
+  DWA与Trajectory Rollout的区别主要是在机器人的控制空间采样差异.Trajectory Rollout采样点来源于整个前向模拟阶段所有可用速度集合,而DWA采样点仅仅来源于一个模拟步骤中的可用速度集合.这意味着相比之下DWA是一种更加有效算法,因为其使用了更小采样空间;然而对于低加速度的机器人来说可能Trajectory Rollout更好, 因为DWA不能对常加速度做前向模拟。
+  
+  
+`dwa_local_planner_params.yaml`:
+```xml
+<rosparam file="$(find turtlebot_navigation)/param/dwa_local_planner_params.yaml" command="load" />
+```
+由于参数较多，注释直接写在源文件里
+```bash
+DWAPlannerROS: 
+
+# Robot Configuration Parameters - Kobuki 机器人配置参数，这里为Kobuki底座
+  max_vel_x: 0.5  # 0.55 
+  #x方向最大线速度绝对值，单位:米/秒
+  min_vel_x: 0.0  
+  #x方向最小线速度绝对值，单位:米/秒。如果为负值表示可以后退.
+
+  max_vel_y: 0.0  # diff drive robot  
+  #y方向最大线速度绝对值，单位:米/秒。turtlebot为差分驱动机器人，所以为0
+  min_vel_y: 0.0  # diff drive robot  
+  #y方向最小线速度绝对值，单位:米/秒。turtlebot为差分驱动机器人，所以为0
+
+  max_trans_vel: 0.5 # choose slightly less than the base's capability 
+  #机器人最大平移速度的绝对值，单位为 m/s
+  min_trans_vel: 0.1  # this is the min trans velocity when there is negligible rotational velocity 
+  #机器人最小平移速度的绝对值，单位为 m/s
+  trans_stopped_vel: 0.1 
+  #机器人被认属于“停止”状态时的平移速度。如果机器人的速度低于该值，则认为机器人已停止。单位为 m/s
+
+  # Warning!
+  #   do not set min_trans_vel to 0.0 otherwise dwa will always think translational velocities
+  #   are non-negligible and small in place rotational velocities will be created.
+  #注意不要将min_trans_vel设置为0，否则DWA认为平移速度不可忽略，将创建较小的旋转速度。
+
+  max_rot_vel: 5.0  # choose slightly less than the base's capability #机器人的最大旋转角速度的绝对值，单位为 rad/s 
+  min_rot_vel: 0.4  # this is the min angular velocity when there is negligible translational velocity #机器人的最小旋转角速度的绝对值，单位为 rad/s
+  rot_stopped_vel: 0.4 #机器人被认属于“停止”状态时的旋转速度。单位为 rad/s
+   
+  acc_lim_x: 1.0 # maximum is theoretically 2.0, but we  机器人在x方向的极限加速度，单位为 meters/sec^2
+  acc_lim_theta: 2.0 机器人的极限旋转加速度，单位为 rad/sec^2
+  acc_lim_y: 0.0      # diff drive robot 机器人在y方向的极限加速度，对于差分机器人来说当然是0
+
+# Goal Tolerance Parameters 目标距离公差参数
+  yaw_goal_tolerance: 0.3  # 0.05 
+  #到达目标点时，控制器在偏航/旋转时的弧度容差(tolerance)。即：到达目标点时偏行角允许的误差，单位弧度
+  xy_goal_tolerance: 0.15  # 0.10 
+  #到到目标点时，控制器在x和y方向上的容差（tolerence）（米）。即：到达目标点时,在xy平面内与目标点的距离误差
+  # latch_xy_goal_tolerance: false 
+  # 设置为true时表示：如果到达容错距离内,机器人就会原地旋转；即使转动是会跑出容错距离外。
+#注：这三个参数的设置及影响讨论请参考《ROS导航功能调优指南》
+
+# Forward Simulation Parameters 前向模拟参数
+  sim_time: 1.0       # 1.7 
+  #前向模拟轨迹的时间，单位为s(seconds) 
+  vx_samples: 6       # 3  
+  #x方向速度空间的采样点数.
+  vy_samples: 1       # diff drive robot, there is only one sample
+  #y方向速度空间采样点数.。Tutulebot为差分驱动机器人，所以y方向永远只有1个值（0.0）
+  vtheta_samples: 20  # 20 
+  #旋转方向的速度空间采样点数.
+#注：参数的设置及影响讨论请参考《ROS导航功能调优指南》
+
+# Trajectory Scoring Parameters 轨迹评分参数
+  path_distance_bias: 64.0      # 32.0   - weighting for how much it should stick to the global path plan
+  #控制器与给定路径接近程度的权重
+  
+  goal_distance_bias: 24.0      # 24.0   - weighting for how much it should attempt to reach its goal
+  #控制器与局部目标点的接近程度的权重，也用于速度控制
+  
+  occdist_scale: 0.5            # 0.01   - weighting for how much the controller should avoid obstacles
+  # 控制器躲避障碍物的程度
+  
+  forward_point_distance: 0.325 # 0.325  - how far along to place an additional scoring point
+  #以机器人为中心，额外放置一个计分点的距离
+  
+  stop_time_buffer: 0.2         # 0.2    - amount of time a robot must stop in before colliding for a valid traj.
+  #机器人在碰撞发生前必须拥有的最少时间量。该时间内所采用的轨迹仍视为有效。即：为防止碰撞,机器人必须提前停止的时间长度
+
+  scaling_speed: 0.25           # 0.25   - absolute velocity at which to start scaling the robot's footprint
+  #开始缩放机器人足迹时的速度的绝对值，单位为m/s。
+  #在进行对轨迹各个点计算footprintCost之前，会先计算缩放因子。如果当前平移速度小于scaling_speed，则缩放因子为1.0，否则，缩放因子为(vmag - scaling_speed) / (max_trans_vel - scaling_speed) * max_scaling_factor + 1.0。然后，该缩放因子会被用于计算轨迹中各个点的footprintCost。
+  # 参考：https://www.cnblogs.com/sakabatou/p/8297479.html
+  #亦可简单理解为：启动机器人底盘的速度.(Ref.: https://www.corvin.cn/858.html)
+  
+  max_scaling_factor: 0.2       # 0.2    - how much to scale the robot's footprint when at speed.
+  #最大缩放因子。max_scaling_factor为上式的值的大小。
+
+# Oscillation Prevention Parameters 振荡预防参数
+  oscillation_reset_dist: 0.05  # 0.05   - how far to travel before resetting oscillation flags
+  #机器人必须运动多少米远后才能复位震荡标记(机器人运动多远距离才会重置振荡标记)
+
+# Global Plan Parameters
+  #prune_plan: false
+  #机器人前进是否清除身后1m外的轨迹.
+  
+# Debugging 调试参数
+  publish_traj_pc : true #将规划的轨迹在RVIZ上进行可视化
+  publish_cost_grid_pc: true 
+  #将代价值进行可视化显示
+  #是否发布规划器在规划路径时的代价网格.如果设置为true,那么就会在~/cost_cloud话题上发布sensor_msgs/PointCloud2类型消息.
+  global_frame_id: odom #全局参考坐标系为odom
+
+
+# Differential-drive robot configuration - necessary? 差分机器人配置参数
+#  holonomic_robot: false 
+   #是否为全向机器人。 值为false时为差分机器人； 为true时表示全向机器人
+```
+
+
+
+## `move_base`参数
+参数文件的调用代码为：
+```bash
+<rosparam file="$(find turtlebot_navigation)/param/move_base_params.yaml" command="load" />
+```
+
+下面看看它的内容(参考：https://www.corvin.cn/858.html)：
+```bash
+# Move base node parameters. For full documentation of the parameters in this file, please see
+#
+#  http://www.ros.org/wiki/move_base
+#
+shutdown_costmaps: false #当move_base在不活动状态时,是否关掉costmap
+
+controller_frequency: 5.0 #向底盘控制移动话题cmd_vel发送命令的频率
+controller_patience: 3.0 #在空间清理操作执行前,控制器花多长时间等待有效控制下发
+
+
+planner_frequency: 1.0 
+#全局规划操作的执行频率.
+#如果设置为0.0,则全局规划器仅在接收到新的目标点或者局部规划器报告路径堵塞时才会重新执行规划操作
+
+planner_patience: 5.0 #在空间清理操作执行前,留给规划器多长时间来找出一条有效规划
+
+oscillation_timeout: 10.0 #执行修复机制前,允许振荡的时长.
+oscillation_distance: 0.2 #机器人必须运动多少米远后才能复位震荡标记。即：来回运动在多大距离以上不会被认为是振荡
+
+# local planner - default is trajectory rollout
+base_local_planner: "dwa_local_planner/DWAPlannerROS" #指定用于move_base的局部规划器名称
+
+base_global_planner: "navfn/NavfnROS" #alternatives: global_planner/GlobalPlanner, carrot_planner/CarrotPlanner
+#指定用于move_base的全局规划器插件名称，自带的有:
+# (1) "navfn/NavfnROS"
+# (2) "global_planner/GlobalPlanner"
+# (3) "carrot_planner/CarrotPlanner"
+
+#We plan to integrate recovery behaviors for turtlebot but currently those belong to gopher and still have to be adapted.
+## recovery behaviors; we avoid spinning, but we need a fall-back replanning
+#recovery_behavior_enabled: true
+
+#recovery_behaviors:
+  #- name: 'super_conservative_reset1'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'conservative_reset1'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'aggressive_reset1'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'clearing_rotation1'
+    #type: 'rotate_recovery/RotateRecovery'
+  #- name: 'super_conservative_reset2'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'conservative_reset2'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'aggressive_reset2'
+    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'clearing_rotation2'
+    #type: 'rotate_recovery/RotateRecovery'
+
+#super_conservative_reset1:
+  #reset_distance: 3.0
+#conservative_reset1:
+  #reset_distance: 1.5
+#aggressive_reset1:
+  #reset_distance: 0.0
+#super_conservative_reset2:
+  #reset_distance: 3.0
+#conservative_reset2:
+  #reset_distance: 1.5
+#aggressive_reset2:
+  #reset_distance: 0.0
+
+```
+
+## `move_base`的运行及其他设置
+
+### `move_base`的运行
+运行的语句为：
+```xml
+...
+<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+···
+```
+可见它是一个可执行文件，并且不可再生，名字为`move_base`, 所以输出重定位到screen。
+
+
+### `move_base`的其他设置
+以下语句加载了一个自定义的参数文件：
+```xml
+<rosparam file="$(arg custom_param_file)" command="load" />
+```
+但由于该参数文件指向一个空文件，所以实际上什么也不做。
+
+将坐标系设置为标准坐标系统、及对topic的remap等操作：
+```xml
+<!-- reset frame_id parameters using user input data -->
+    <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
+    <param name="global_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="local_costmap/global_frame" value="$(arg odom_frame_id)"/>
+    <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+    <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
+
+    <remap from="cmd_vel" to="navigation_velocity_smoother/raw_cmd_vel"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="scan" to="$(arg laser_topic)"/>
+```
+设置标准坐标系统为：
+- `global_costmap/global_frame` --> `map` 全局代价地图中全局坐标系为map
+- `global_costmap/robot_base_frame` --> `base_footprint` 全局代价地图中机器人本体坐标系为`base_footprint`
+- `local_costmap/global_frame` --> `odom` 局部代价的全局坐标系为odom
+- `local_costmap/robot_base_frame` --> `base_footprint`  局部代价机器人本体坐标系为`base_footprint`
+- `DWAPlannerROS/global_frame_id` --> `odom` DWA局部规划器中全局坐标系为`odom`
+
+topic的remap:
+- `cmd_vel` --> `navigation_velocity_smoother/raw_cmd_vel` 将速度话题`cmd_vel`remap为`navigation_velocity_smoother/raw_cmd_vel`
+- `odom` --> `odom` `odom` remap为 `odom` (写得能通用，因为可以在前面改变topic的name)
+- `scan` --> `scan` `scan` remap为 `scan`

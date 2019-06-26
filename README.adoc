@@ -49,11 +49,12 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 
 === ROS Resources
 . 机器人操作系统（ROS）教育基金会, type: video&pdf, http://www.roseducation.org/[link]
-. ROS激光SLAM导航理解, type: blog, https://blog.csdn.net/luohuiwu/article/details/92787237[link]
-. 【2018】中国大学MOOC---《机器人操作系统入门》课程讲义, type: pdf&video, http://www.icourse163.org/course/ISCAS-1002580008[link]
+//. ROS激光SLAM导航理解, type: blog, https://blog.csdn.net/luohuiwu/article/details/92787237[link]
+. (*new!*) 专栏文章：ROS激光SLAM导航（`move_base`参数配置注释）， type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
+. 中国大学MOOC---《机器人操作系统入门》课程讲义(2018), type: pdf&video, http://www.icourse163.org/course/ISCAS-1002580008[link]
 . 小强ROS机器人教程, type: pdf,  http://community.bwbot.org/topic/110/%E5%B0%8F%E5%BC%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%E5%92%8C%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95[pdf link]
 . 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[pdf link]
-. *_ROS小课堂_*, type:online resource, https://www.corvin.cn/posts[link]
+. ROS小课堂, type:online resource, https://www.corvin.cn/posts[link]
 
 === AGV Standards
 
