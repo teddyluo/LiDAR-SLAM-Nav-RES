@@ -500,7 +500,7 @@ static_layer:
 ```
 其中，
 - `costmap_common.yaml`为costmap的通用参数设置
-- `global_costmap_params.yaml'为全局costmap的设置。
+- `global_costmap_params.yaml`为全局costmap的设置。
 `costmap_common.yaml`在前面已有介绍。这里介绍`global_costmap_params.yaml'。它的定义为：
 
 ```xml
@@ -525,9 +525,11 @@ global_costmap:
 - `transform_tolerance: 0.5` tf变换最大延时
 global map引入了以下三层，经融合构成了master map，用于global planner
 - plugins: 插件定义
-     - {name: static_layer,            type: "costmap_2d::StaticLayer"} 静态地图层
-     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}  障碍地图层
-     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"} 膨胀地图层，用于留出足够的安全距离
+     - `{name: static_layer,            type: "costmap_2d::StaticLayer"}` 静态地图层
+     - `{name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}`  障碍地图层
+     - `{name: inflation_layer,         type: "costmap_2d::InflationLayer"}` 膨胀地图层，用于留出足够的安全距离
+
+**这里有个疑问**：为什么`obstacle_layer`的类型不是普通的`costmap_2d::ObstacleLayer`？Turtlebot为什么将它设置为`costmap_2d::VoxelLayer`?其实在`costmap_common_params.yaml`也提到了，开启`bump`输入源是为了更好地可视化整个voxel层的情况，方便调试。所以这里将`obstacle_layer`的地图类型设置为`costmap_2d::VoxelLayer`。
 
 ## 局部代价地图的设置`local_costmap_params.yaml`
 局部代价地图的设置主要有两个文件：
@@ -538,7 +540,7 @@ global map引入了以下三层，经融合构成了master map，用于global pl
 其中，
 - `costmap_common.yaml`为costmap的通用参数设置，`costmap_common.yaml`在前面已有介绍。
 - `local_costmap_params.yaml'局部costmap的设置。
-- 
+
 这里介绍`local_costmap_params.yaml'。它的定义为：
 
 ```xml
