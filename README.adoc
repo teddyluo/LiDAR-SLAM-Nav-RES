@@ -15,12 +15,11 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-RES) to follow up current
 
 . [red]#*_ROS Layered Costmaps_*# +
 David V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715.
- ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF], https://blog.csdn.net/xmy306538517/article/details/72899667[中文翻译] (poor quality)
+ ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF], https://blog.csdn.net/xmy306538517/article/details/72899667[中文翻译] (poor quality), https://zhuanlan.zhihu.com/p/28162685[ROS costmap_2D理解]
  ** https://pan.baidu.com/s/182GHhXS_QQwN_y48k2J1Pg[Video,百度网盘] (提取码`7ify`)
  ** https://scholar.google.com/citations?user=bfksbjAAAAAJ&hl=zh-CN[David V. Lu's page in Google Scholar]
- ** Lu, David Vincent, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. type:pdf, https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1062&context=eng_etds[link], https://www.mobt3ath.com/uplode/book/book-2423.pdf[link2]
- ** Other resources:
- .. https://zhuanlan.zhihu.com/p/28162685[ROS costmap_2D理解]
+ ** ([red]#new!#)Lu, David Vincent, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. 
+    * type:pdf, https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1062&context=eng_etds[link], https://www.mobt3ath.com/uplode/book/book-2423.pdf[link2]
 
 . [red]#*_Layered Social Cost Map_*# +
 Kollmitz, Marina, et al. "*_Time dependent planning on a layered social cost map for human-aware robot navigation_*." 2015 European Conference on Mobile Robots (ECMR). IEEE, 2015.
@@ -55,16 +54,16 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 === ROS Resources
 . 机器人操作系统（ROS）教育基金会, type: video&pdf, http://www.roseducation.org/[link]
 //. ROS激光SLAM导航理解, type: blog, https://blog.csdn.net/luohuiwu/article/details/92787237[link]
-. (*new!*) 专栏文章：ROS激光SLAM导航(`move_base`参数配置注释), type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
+. ([red]#new!#) 专栏文章：ROS激光SLAM导航(`move_base`参数配置注释), type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
 . 中国大学MOOC---《机器人操作系统入门》课程讲义(2018), type: pdf&video, http://www.icourse163.org/course/ISCAS-1002580008[link]
-. 小强ROS机器人教程, type: pdf,  http://community.bwbot.org/topic/110/%E5%B0%8F%E5%BC%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%E5%92%8C%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95[pdf link]
-. 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[pdf link]
-. ROS小课堂, type:online resource, https://www.corvin.cn/posts[link]
+. 小强ROS机器人教程, type: pdf,  http://community.bwbot.org/topic/110/%E5%B0%8F%E5%BC%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%E5%92%8C%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95[link]
+. 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[link]
+. ROS小课堂, type:blog, https://www.corvin.cn/posts[link]
 
 === AGV Standards
 
-- 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[pdf(alternative)]
-- 《GB/T 30030 自动导引车（AGV） 术语》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC56D3A7E05397BE0A0AB82A[pdf],  http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=6[pdf(alternative)]
+- 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[pdf(candidate )]
+- 《GB/T 30030 自动导引车（AGV） 术语》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC56D3A7E05397BE0A0AB82A[pdf],  http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=6[pdf(candidate )]
 - 《GB/T 20721 自动导引车 通用技术条件》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7F46CD3A7E05397BE0A0AB82A[pdf]
  
 === Projects
