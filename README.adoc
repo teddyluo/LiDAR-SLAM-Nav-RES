@@ -15,7 +15,9 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-RES) to follow up current
 
 . [red]#*_ROS Layered Costmaps_*# +
 David V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715.
- ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF], https://blog.csdn.net/xmy306538517/article/details/72899667[中文翻译] (poor quality), https://zhuanlan.zhihu.com/p/28162685[ROS costmap_2D理解]
+ ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF], 
+ ** https://github.com/teddyluo/ROSCostmap-Chinese[《上下文敏感的导航分层代价地图》] ([red]#2019/07/05#), 
+ ** https://zhuanlan.zhihu.com/p/28162685[ROS costmap_2D理解]
  ** https://pan.baidu.com/s/182GHhXS_QQwN_y48k2J1Pg[Video,百度网盘] (提取码`7ify`)
  ** https://scholar.google.com/citations?user=bfksbjAAAAAJ&hl=zh-CN[David V. Lu's page in Google Scholar]
  ** ([red]#new!#)Lu, David Vincent, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. 
