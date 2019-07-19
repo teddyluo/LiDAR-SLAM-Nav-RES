@@ -11,25 +11,26 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-RES) to follow up current
 
 == (Current) Project III -- Motion Planning
 
-=== Papers
+=== ROS Research Papers
 
 . [red]#*_ROS Layered Costmaps_*# +
 David V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715.
- ** http://wustl.probablydavid.com/publications/IROS2014.pdf[PDF], 
+ ** http://wustl.probablydavid.com/publications/IROS2014.pdf[pdf], 
  ** https://github.com/teddyluo/ROSCostmap-Chinese[《上下文敏感的导航分层代价地图》] ([red]#2019/07/05#), 
  ** https://zhuanlan.zhihu.com/p/28162685[ROS costmap_2D理解]
  ** https://pan.baidu.com/s/182GHhXS_QQwN_y48k2J1Pg[Video,百度网盘] (提取码`7ify`)
  ** https://scholar.google.com/citations?user=bfksbjAAAAAJ&hl=zh-CN[David V. Lu's page in Google Scholar]
- ** ([red]#new!#)Lu, David Vincent, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. 
-    * type:pdf, https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1062&context=eng_etds[link], https://www.mobt3ath.com/uplode/book/book-2423.pdf[link2]
+ ** David Vincent Lu, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. 
+    * type:pdf, https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1062&context=eng_etds[pdf], https://www.mobt3ath.com/uplode/book/book-2423.pdf[pdf(backup)]
 
 . [red]#*_Layered Social Cost Map_*# +
-Kollmitz, Marina, et al. "*_Time dependent planning on a layered social cost map for human-aware robot navigation_*." 2015 European Conference on Mobile Robots (ECMR). IEEE, 2015.
- ** http://ais.informatik.uni-freiburg.de/publications/papers/kollmitz15ecmr.pdf[PDF]
+** Kollmitz, Marina, et al. "*_Time Dependent Planning on a Layered Social Cost Map for Human-Aware Robot Navigation_*." 2015 European Conference on Mobile Robots (ECMR). IEEE, 2015.  http://ais.informatik.uni-freiburg.de/publications/papers/kollmitz15ecmr.pdf[pdf]
+  
+ ** [red]#*_(2019/07/19)_*# David V. Lu, Daniel B. Allan, and William D. Smart. "*_Tuning Cost Functions for Social Navigation_*." International Conference on Social Robotics. Springer, Cham, 2013. https://pdfs.semanticscholar.org/73e3/ccd7a03eb1d8d4a9354e5c44d314f7f1199f.pdf[pdf]
 
  . [red]#*_ROS Navigation: Concepts and Tutorial_*# +
 Guimarães R L, de Oliveira A S, Fabro J A, et al. *_ROS navigation: Concepts and tutorial[M]_*//Robot Operating System (ROS). Springer, Cham, 2016: 121-160.
- ** https://www.researchgate.net/profile/Joao_Fabro/publication/302986850_ROS_Navigation_Concepts_and_Tutorial/links/5b0c2f51aca2725783ec37c4/ROS-Navigation-Concepts-and-Tutorial.pdf[PDF]
+ ** https://www.researchgate.net/profile/Joao_Fabro/publication/302986850_ROS_Navigation_Concepts_and_Tutorial/links/5b0c2f51aca2725783ec37c4/ROS-Navigation-Concepts-and-Tutorial.pdf[pdf]
  
 
 . [red]#*_ROS Navigation Tuning Guide_*# +
@@ -56,11 +57,12 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 === ROS Resources
 . 机器人操作系统（ROS）教育基金会, type: video&pdf, http://www.roseducation.org/[link]
 //. ROS激光SLAM导航理解, type: blog, https://blog.csdn.net/luohuiwu/article/details/92787237[link]
-. ([red]#new!#) 专栏文章：ROS激光SLAM导航(`move_base`参数配置注释), type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
+. [red]#专栏文章#：ROS激光SLAM导航(`move_base`参数配置注释), type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
 . 中国大学MOOC---《机器人操作系统入门》课程讲义(2018), type: pdf&video, http://www.icourse163.org/course/ISCAS-1002580008[link]
 . 小强ROS机器人教程, type: pdf,  http://community.bwbot.org/topic/110/%E5%B0%8F%E5%BC%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%E5%92%8C%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95[link]
 . 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[link]
 . ROS小课堂, type:blog, https://www.corvin.cn/posts[link]
+
 
 === AGV Standards
 
