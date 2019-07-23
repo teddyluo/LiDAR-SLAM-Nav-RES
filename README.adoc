@@ -30,8 +30,10 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-Nav-RES) to follow up cur
 
 * [red]#*_ROS Navigation Tuning Guide_*#
 
-> Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*]. arXiv preprint arXiv:1706.09068v2, Sep. 2016. https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[pdf] +
+> Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*]. arXiv preprint arXiv:1706.09068v2, Sep. 2016. https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[pdf]
+>
 > * 中文翻译： https://github.com/teddyluo/ROSNavGuide-Chinese[《ROS导航功能调优指南》]
+>
 > * ROS Wiki: http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide[link]
 
 * [red]#*_ROS Navigation: Concepts and Tutorial_*#
@@ -47,14 +49,16 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-Nav-RES) to follow up cur
 
 
 > * Robotics (Release 1.4)
-> Jeff McGough, Book title: *_Robotics_*. Date: Dec./02/2018. http://roboscience.org/book/Robotics.pdf[*pdf*]
+>
+> > Jeff McGough, Book title: *_Robotics_*. Date: Dec./02/2018. http://roboscience.org/book/Robotics.pdf[*pdf*]
 > 
 > * 《机器人操作系统（ROS）史话36 篇》
 >
-> 张新宇, http://www.roseducation.org/docs/ROS_history.pdf[pdf]
+> > 张新宇, http://www.roseducation.org/docs/ROS_history.pdf[pdf]
 > 
 > * 《人类找北史：从罗盘到GPS，导航定位的过去与未来》
-> Bray, Hiawatha. You are here: From the compass to GPS, the history and future of how we find ourselves. Basic Books (AZ), 2014. link:./pdfs/2018-You-are-here.pdf[pdf（中文翻译）]
+>
+> > Bray, Hiawatha. You are here: From the compass to GPS, the history and future of how we find ourselves. Basic Books (AZ), 2014. link:./pdfs/2018-You-are-here.pdf[pdf（中文翻译）]
 
 //// 
 . [red]#*_Sparse Pose Adjustment (SPA)_*# +
@@ -62,10 +66,15 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 ////
 
 === Courses
-> * 《智能机器人系统》
-> > 国防科技大学智能科学学院, 卢惠民，郑志强，韦庆，肖军浩，杨绍武，曾志文， http://www.icourse163.org/course/NUDT-1205969803[link]
-> * 《机器人操作系统入门》(2018)
-> > 中科院软件所&中科重德机器人公司, 柴长坤, https://www.icourse163.org/course/0802ISCAS001-1002580008[link]
+____
+* 《智能机器人系统》
+
+> 国防科技大学智能科学学院, 卢惠民，郑志强，韦庆，肖军浩，杨绍武，曾志文， http://www.icourse163.org/course/NUDT-1205969803[link]
+
+* 《机器人操作系统入门》(2018)
+
+> 中科院软件所&中科重德机器人公司, 柴长坤, https://www.icourse163.org/course/0802ISCAS001-1002580008[link]
+____
 
 === Online Resources
 
@@ -99,7 +108,9 @@ ____
 ** https://github.com/ros-planning/navigation[github]
 ____
 
-=== 机器人硬件平台
+=== 机器人硬件
+
+==== 1) 硬件平台
 ____
 * EAI机器人， http://www.eaibot.cn/cn/download[资料]
 * 小强机器人， http://www.bwbot.org/zh-cn/[蓝鲸智能机器人]
@@ -107,7 +118,7 @@ ____
 * miiboo机器人： https://www.cnblogs.com/hiram-zhang/[link]
 ____
 
-==== AGV Standards
+==== 2) AGV 国家标准
 
 ____
 * 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[pdf(candidate )]
