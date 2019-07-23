@@ -13,7 +13,7 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-Nav-RES) to follow up cur
 
 === ROS Research Papers
 
-. [red]#*_ROS Layered Costmaps_*#
+* [red]#*_ROS Layered Costmaps_*#
 
 > David V. Lu, D. Hershberger and W. D. Smart, "*_Layered costmaps for context-sensitive navigation_*," 2014 IEEE/RSJ International Conference on Intelligent Robots and Systems, Chicago, IL, 2014, pp. 709-715. http://wustl.probablydavid.com/publications/IROS2014.pdf[pdf]
 >
@@ -23,37 +23,38 @@ A page of `LiDAR SLAM Navigatio Resources` (LiDAR-SLAM-Nav-RES) to follow up cur
 > * https://scholar.google.com/citations?user=bfksbjAAAAAJ&hl=zh-CN[David V. Lu's page in Google Scholar]
 > * David Vincent Lu, "*_Contextualized Robot Navigation_*" (2014). Engineering and Applied Science Theses & Dissertations. 62. https://openscholarship.wustl.edu/cgi/viewcontent.cgi?article=1062&context=eng_etds[pdf], https://www.mobt3ath.com/uplode/book/book-2423.pdf[pdf(candidate)]
 
-. [red]#*_Layered Social Cost Map_*#
+* [red]#*_Layered Social Cost Map_*#
 
 > * Kollmitz, Marina, et al. "*_Time Dependent Planning on a Layered Social Cost Map for Human-Aware Robot Navigation_*." 2015 European Conference on Mobile Robots (ECMR). IEEE, 2015.  http://ais.informatik.uni-freiburg.de/publications/papers/kollmitz15ecmr.pdf[pdf]
 > * [red]#*_(2019/07/19)_*# David V. Lu, Daniel B. Allan, and William D. Smart. "*_Tuning Cost Functions for Social Navigation_*." International Conference on Social Robotics. Springer, Cham, 2013. https://pdfs.semanticscholar.org/73e3/ccd7a03eb1d8d4a9354e5c44d314f7f1199f.pdf[pdf]
 
-. [red]#*_ROS Navigation Tuning Guide_*#
+* [red]#*_ROS Navigation Tuning Guide_*#
 
 > Kaiyu Zheng, https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[*_ROS Navigation Tuning Guide_*]. arXiv preprint arXiv:1706.09068v2, Sep. 2016. https://github.com/zkytony/ROSNavigationGuide/blob/master/main.pdf[pdf] +
 > * 中文翻译： https://github.com/teddyluo/ROSNavGuide-Chinese[《ROS导航功能调优指南》]
 > * ROS Wiki: http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide[link]
 
- . [red]#*_ROS Navigation: Concepts and Tutorial_*#
+* [red]#*_ROS Navigation: Concepts and Tutorial_*#
 
 > Guimarães R L, de Oliveira A S, Fabro J A, et al. *_ROS navigation: Concepts and tutorial[M]_*//Robot Operating System (ROS). Springer, Cham, 2016: 121-160. https://www.researchgate.net/profile/Joao_Fabro/publication/302986850_ROS_Navigation_Concepts_and_Tutorial/links/5b0c2f51aca2725783ec37c4/ROS-Navigation-Concepts-and-Tutorial.pdf[pdf]
 
-. [red]#*_Robotics Engineering 2: ROS-Turtlebot Motion Control and Navigation_*#
+* [red]#*_Robotics Engineering 2: ROS-Turtlebot Motion Control and Navigation_*#
 
 > AK Assad, Mashruf Chowdhury, and Yanik Porto, *_Robotics Engineering 2: ROS-Turtlebot Motion Control and Navigation_*. May 11, 2015. http://mangoprojects.info/wp-content/uploads/2015/06/ros_report.pdf[pdf]
 
 
 === Books
-. [red]#*_Robotics_*# (Release 1.4)
 
+
+> * Robotics (Release 1.4)
 > Jeff McGough, Book title: *_Robotics_*. Date: Dec./02/2018. http://roboscience.org/book/Robotics.pdf[*pdf*]
-
-. 张新宇, 《机器人操作系统（ROS）史话36 篇》, http://www.roseducation.org/docs/ROS_history.pdf[pdf]
-
-. 《人类找北史：从罗盘到GPS，导航定位的过去与未来》
-
+> 
+> * 《机器人操作系统（ROS）史话36 篇》
+>
+> 张新宇, http://www.roseducation.org/docs/ROS_history.pdf[pdf]
+> 
+> * 《人类找北史：从罗盘到GPS，导航定位的过去与未来》
 > Bray, Hiawatha. You are here: From the compass to GPS, the history and future of how we find ourselves. Basic Books (AZ), 2014. link:./pdfs/2018-You-are-here.pdf[pdf（中文翻译）]
-
 
 //// 
 . [red]#*_Sparse Pose Adjustment (SPA)_*# +
@@ -61,11 +62,16 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 ////
 
 === Courses
-* 《智能机器人系统》, 国防科技大学智能科学学院, 卢惠民，郑志强，韦庆，肖军浩，杨绍武，曾志文， http://www.icourse163.org/course/NUDT-1205969803[link]
-* 《机器人操作系统入门》(2018), 中科院软件所&中科重德机器人公司, 柴长坤, https://www.icourse163.org/course/0802ISCAS001-1002580008[link]
+> * 《智能机器人系统》
+> > 国防科技大学智能科学学院, 卢惠民，郑志强，韦庆，肖军浩，杨绍武，曾志文， http://www.icourse163.org/course/NUDT-1205969803[link]
+> * 《机器人操作系统入门》(2018)
+> > 中科院软件所&中科重德机器人公司, 柴长坤, https://www.icourse163.org/course/0802ISCAS001-1002580008[link]
 
 === Online Resources
+
 === Tutorials
+
+____
 * 机器人操作系统（ROS）暑期学校, type: video&pdf, http://www.roseducation.org/[link]
 //. ROS激光SLAM导航理解, type: blog, https://blog.csdn.net/luohuiwu/article/details/92787237[link]
 * [red]#专栏文章#：ROS激光SLAM导航(`move_base`参数配置注释), type: blog, https://blog.csdn.net/luohuiwu/column/info/40494[link]
@@ -74,34 +80,42 @@ Konolige K, Grisetti G, Kümmerle R, et al. Efficient sparse pose adjustment for
 
 * 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[link]
 * ROS小课堂, type:blog, https://www.corvin.cn/posts[link]
+____
 
 ==== Notes
+____
 * http://wiki.ros.org/cn/navigation[ROS Nav Wiki]
 * https://zhuanlan.zhihu.com/ros-nav[ROS Navigation Stack源码学习]
 * https://www.ncnynl.com/category/ros-navigation/[ROS与navigation教程 by 创客智造]
 * link:./notes/Turtle2eNavParamExp.md[*Turtlebot 2e 导航之move_base参数详解*]
-
+____
  
 === Projects
+
+____
 . [red]#*_PythonRobotics_*# +
 ** https://github.com/AtsushiSakai/PythonRobotics[github (!!Excellent!!)]
 . ROS Navigation Stack +
 ** https://github.com/ros-planning/navigation[github]
-
+____
 
 === 机器人硬件平台
+____
 * EAI机器人， http://www.eaibot.cn/cn/download[资料]
 * 小强机器人， http://www.bwbot.org/zh-cn/[蓝鲸智能机器人]
 * 思岚科技（SLAMTEC）: http://www.slamtec.com/[link]
 * miiboo机器人： https://www.cnblogs.com/hiram-zhang/[link]
+____
 
 ==== AGV Standards
+
+____
 * 《GB/T 30029 自动导引车（AGV） 设计通则》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC55D3A7E05397BE0A0AB82A[pdf], http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=5[pdf(candidate )]
 
 * 《GB/T 30030 自动导引车（AGV） 术语》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7EC56D3A7E05397BE0A0AB82A[pdf],  http://www.agvchina.com/index.aspx?lanmuid=93&sublanmuid=763&id=6[pdf(candidate )]
 
 * 《GB/T 20721 自动导引车 通用技术条件》, http://www.std.gov.cn/gb/search/gbDetailed?id=71F772D7F46CD3A7E05397BE0A0AB82A[pdf]
-
+____
 
 == Project I -- Hardware Configuration: Laser and IMU Sensors
 
