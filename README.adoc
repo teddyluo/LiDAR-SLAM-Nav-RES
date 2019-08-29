@@ -88,7 +88,12 @@ ____
 * 小强ROS机器人教程, type: pdf,  http://community.bwbot.org/topic/110/%E5%B0%8F%E5%BC%BA%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%E5%92%8C%E6%95%99%E7%A8%8B%E7%9B%AE%E5%BD%95[link]
 
 * 机器人操作系统（ROS）浅析, type:pdf,  https://www.cse.sc.edu/~jokane/agitr/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%88ROS%EF%BC%89%E6%B5%85%E6%9E%90.pdf[link]
+
 * ROS小课堂, type:blog, https://www.corvin.cn/posts[link]
+
+* HandsFree开源机器人项目,  http://wiki.hfreetech.org/[wiki], https://github.com/HANDS-FREE[github], https://pan.baidu.com/s/1LHBXVlCPECPCiABTjb51nw[百度云资料]
+
+* Exbot 易科实验室, http://blog.exbot.net/[link]
 ____
 
 ==== Notes
