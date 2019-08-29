@@ -91,8 +91,6 @@ ____
 
 * ROS小课堂, type:blog, https://www.corvin.cn/posts[link]
 
-* HandsFree开源机器人项目,  http://wiki.hfreetech.org/[wiki], https://github.com/HANDS-FREE[github], https://pan.baidu.com/s/1LHBXVlCPECPCiABTjb51nw[百度云资料]
-
 * Exbot 易科实验室, http://blog.exbot.net/[link]
 ____
 
@@ -121,6 +119,7 @@ ____
 * 小强机器人， http://www.bwbot.org/zh-cn/[蓝鲸智能机器人]
 * 思岚科技（SLAMTEC）: http://www.slamtec.com/[link]
 * miiboo机器人： https://www.cnblogs.com/hiram-zhang/[link]
+* HandsFree开源机器人项目,  http://wiki.hfreetech.org/[wiki], https://github.com/HANDS-FREE[github], https://pan.baidu.com/s/1LHBXVlCPECPCiABTjb51nw[百度云资料]
 ____
 
 ==== 2) AGV 国家标准
